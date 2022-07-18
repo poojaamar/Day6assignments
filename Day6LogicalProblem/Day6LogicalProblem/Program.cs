@@ -1,19 +1,19 @@
 ﻿Console.Write("Enter the number: ");
 int num = int.Parse(Console.ReadLine()); 
-int ans, count = 0;
-for (int i = 2; i <= num / 2; i++)
+int originalNum = num; 
+int palin = 0, ans;
+while (num > 0) 
 {
-    ans = num % i; 
-    if (ans == 0) 
-    {
-        count++;
-    }
+    ans = num % 10;
+    palin = palin * 10 + ans; 
+    num /= 10; 
 }
-if (count == 0) 
+if (originalNum == palin) 
 {
-    Console.WriteLine(num + " is a Prime Number");
+    Console.WriteLine("Number is Palindrome");
 }
 else
 {
-    Console.WriteLine(num + " is not a Prime Number");
+    Console.WriteLine("Number is not Palindrome");
 }
+
